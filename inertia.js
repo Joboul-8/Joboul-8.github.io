@@ -81,32 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
         momentumID = requestAnimationFrame(animate);
     }
 
-    function autoScroll() {
-        if (autoScrollEnabled && !isDown) {
-            track.scrollLeft += autoScrollSpeed;
+function autoScroll() {
+    if (autoScrollEnabled && !isDown) {
+        track.scrollLeft += autoScrollSpeed;
 
-            if (track.scrollLeft >= track.scrollWidth / 2) {
-                track.scrollLeft = 0;
-            }
+        // safer reset (NOT half width)
+        if (track.scrollLeft >= track.scrollWidth - track.clientWidth) {
+            track.scrollLeft = 0;
         }
-
-        requestAnimationFrame(autoScroll);
     }
 
-    // Events
-    track.addEventListener("mousedown", start);
-    track.addEventListener("mousemove", move);
-    track.addEventListener("mouseup", end);
-    track.addEventListener("mouseleave", end);
-
-    track.addEventListener("touchstart", start, { passive: true });
-    track.addEventListener("touchmove", move, { passive: false });
-    track.addEventListener("touchend", end);
-
-    // Prevent image drag
-    track.querySelectorAll("img").forEach(img => {
-        img.draggable = false;
-    });
-
+    requestAnimationFrame(autoScroll);
+}
     autoScroll();
 });
