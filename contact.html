@@ -1,81 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
 
-    <link rel="icon" type="image/x-icon" href="Pics/20240313004500_1.jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="imagewebicon" href="Pics/20240313004500_1.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-    body {
-        margin: 0;                         
-        overflow-y: auto;
-        min-height: 100vh;
-        align-items: center;
-        display: flex;
+<style>
+* {
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
 
-        background: linear-gradient(
-            -67deg,
-         #34403A,
-         #285238,
-        #343330,
-        #DC851F
-    );
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(-67deg, #34403A, #285238, #343330, #DC851F);
     background-size: 400% 400%;
     animation: gradient 10s ease infinite;
+
+    overflow-x: hidden;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Background GIF */
+.bg-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Heading */
+h1 {
+    color: white;
+    text-align: center;
+    margin: 20px 10px;
+}
+
+/* Nav */
+nav {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+/* Buttons container */
+.links {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    }
+    gap: 15px;
+    padding: 20px;
+    max-width: 900px;
+}
 
-    @keyframes gradient {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+/* Buttons */
+button {
+    background: transparent;
+    color: white;
+    border: 2px transparent;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
 
+button:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
     button {
-        background: transparent;
-        color: rgb(255, 255, 255);
-        border: 2px transparent;
-        text-align: center;
-        padding: 50px;
-        margin: 10px;
+        width: 100%;
+        max-width: 280px;
     }
-    </style>
+
+    h1 {
+        font-size: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- Background GIF -->
-<img src="Pics/Joboul Dab.gif" alt="Joboul Dab.gif"
-style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+<img class="bg-gif" src="Pics/Joboul Dab.gif" alt="background">
 
-<!-- Heading -->
-<h1 style="color: white; text-align: center; padding: 25px;">LINKS!</h1>
-
-<!-- Navigation -->
 <nav>
-    <button style="background: transparent; color: rgb(255, 255, 255); border: 2px transparent; text-align: center; padding: 50px;"
-        onclick="window.location.href='index.html'">
-        Home
-    </button>
+    <button onclick="window.location.href='index.html'">Home</button>
 </nav>
 
-<!-- Links -->
-<section class="links">
+<h1>LINKS!</h1>
 
+<section class="links">
     <button onclick="window.open('https://letterboxd.com/joboul/')">Letterboxd</button>
     <button onclick="window.open('https://github.com/joboul-8')">GitHub</button>
     <button onclick="window.open('https://www.instagram.com/elliott.nw/')">Instagram</button>
     <button onclick="window.open('https://www.goodreads.com/joboul')">Goodreads</button>
     <button onclick="window.open('https://www.youtube.com/@joboul')">YouTube</button>
     <button onclick="window.open('https://www.linkedin.com/in/elliott-noriega-waite-a75134298/')">LinkedIn</button>
-
 </section>
 
-<p style="color: white; text-align: center; padding: 50px;">© 2026 Joboul~</p>
+<p style="color:white; text-align:center; margin-top:20px;">© 2026 Joboul~</p>
 
 </body>
 </html>
