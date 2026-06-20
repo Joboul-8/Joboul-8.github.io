@@ -1,0 +1,38 @@
+/* OUTER WRAPPER */
+.carousel,
+.Imgshowcase {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* SCROLL TRACK */
+.track {
+    display: flex;
+    gap: 15px;
+
+    overflow-x: auto;
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+
+    cursor: grab;
+
+    scrollbar-width: none; /* Firefox */
+}
+
+/* hide scrollbar (Chrome/Safari) */
+.track::-webkit-scrollbar {
+    display: none;
+}
+
+/* IMAGES */
+.track img {
+    width: 300px;
+    height: 400px;
+
+    object-fit: contain;
+    border-radius: 10px;
+
+    flex-shrink: 0;
+    user-select: none;
+    pointer-events: none;
+}
